@@ -36,7 +36,7 @@ RUN dpkg -i packages-microsoft-prod.deb
 RUN rm packages-microsoft-prod.deb
 
 RUN apt-get update
-RUN apt-get install -y dotnet-runtime-8.0
+RUN apt-get install -y aspnetcore-runtime-8.0  # Cambiado de dotnet-runtime-8.0 a aspnetcore-runtime-8.0
 
 WORKDIR /app
 COPY --from=publish /app/publish .
