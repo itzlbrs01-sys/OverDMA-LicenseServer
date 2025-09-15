@@ -26,6 +26,7 @@ RUN dotnet publish "OverDMA-LicenseServer.csproj" -c Release -o /app/publish /p:
 FROM ubuntu:22.04
 
 RUN apt-get update && apt-get install -y \
+    wget \
     apt-transport-https \
     gnupg \
     ca-certificates
