@@ -2,8 +2,13 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Bind to 0.0.0.0 and use PORT from environment (for Render)
+builder.WebHost.UseUrls("http://0.0.0.0:" + Environment.GetEnvironmentVariable("PORT") ?? "5000");
+
 var app = builder.Build();
 
+// Endpoint para activar licencia
 app.MapGet("/activate", ([FromQuery] string key, [FromQuery] string hwid) =>
 {
     var licenses = LoadLicenses();
