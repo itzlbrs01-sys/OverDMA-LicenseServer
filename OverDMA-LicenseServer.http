@@ -1,0 +1,6 @@
+@OverDMA_LicenseServer_HostAddress = http://localhost:5073
+
+GET {{OverDMA_LicenseServer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
